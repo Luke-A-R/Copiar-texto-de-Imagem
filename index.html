@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR com Tesseract.js</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="Logo.png" alt="Logo" class="logo">
+        </div>
+
+        <h1>Conversor de Imagem em Texto</h1>
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*">
+            <label for="imageInput" class="upload-label">Carregar Imagem</label>
+            <div id="dropArea" class="drop-area">
+                <p>Arraste e solte uma imagem aqui</p>
+            </div>
+            <div id="pasteArea" class="paste-area">
+                <p>Ou cole uma imagem (Ctrl + V)</p>
+            </div>
+        </div>
+        <div class="language-selector">
+            <label for="language">Idioma:</label>
+            <select id="language">
+                <option value="por">Português</option>
+                <option value="eng">Inglês</option>
+                <option value="spa">Espanhol</option>
+                <option value="fra">Francês</option>
+            </select>
+        </div>
+        <div class="image-preview">
+            <img id="preview" src="#" alt="Pré-visualização da imagem">
+        </div>
+        <button id="extractButton">Extrair Texto</button>
+        <div class="results">
+            <h2>Texto Extraído:</h2>
+            <div class="text-container">
+                <pre id="output"></pre>
+                <button id="copyButton" class="hidden">Copiar Texto</button>
+            </div>
+            <button id="toggleDetailsButton" class="hidden">Mostrar Detalhes</button>
+            <div id="confidenceDetails" class="hidden"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.4/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
